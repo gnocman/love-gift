@@ -23,7 +23,7 @@
     {
       label: "NHÂN VẬT CHÍNH LÀ EM",
       title: "À, suýt quên mất! 🥰",
-      copy: "Nhân vật chính của câu chuyện này là em mới đúng.\n\nAnh thấy em đáng yêu nhất là lúc [điền điều anh thích ở em].",
+      copy: "Nhân vật chính của câu chuyện này là em mới đúng.\n\nAnh thấy em đáng yêu nhất là lúc em nói chuyện và chia sẻ mọi điều trong cuộc sống, công việc với anh.",
       button: "Rồi rồi, nói tiếp đi anh",
       art: "photo",
       image: "assets/images/em-6.jpg"
@@ -68,8 +68,15 @@
   const progressText = document.getElementById("progressText");
   const progressDots = [...document.querySelectorAll(".progress-dot")];
   const illustration = document.getElementById("illustration");
-  const photoWrap = document.getElementById("photoWrap");
-  const photo = document.getElementById("photo");
+  const photoWraps = Array.from(
+    { length: 6 },
+    (_, index) => document.getElementById(`photoWrap-${index + 1}`)
+  );
+
+  const photos = Array.from(
+    { length: 6 },
+    (_, index) => document.getElementById(`photo-${index + 1}`)
+  );
   const interaction = document.getElementById("interaction");
 
   let currentStep = 0;
@@ -85,7 +92,9 @@
     };
     illustration.innerHTML = art[type] ?? art.envelope;
     illustration.hidden = type === "photo";
-    photoWrap.hidden = type !== "photo";
+    photoWraps.forEach((wrap) => {
+      wrap.hidden = true;
+    });
   }
 
   function renderStep(index) {
@@ -102,12 +111,23 @@
     makeArt(step.art);
 
     if (step.image) {
+      const photoIndex = index;
+
+      photoWraps.forEach((wrap, i) => {
+        wrap.hidden = i !== photoIndex;
+      });
+
+      const photo = photos[photoIndex];
       photo.src = step.image;
-      photo.alt = index === 2 ? "Ảnh của em" : "Một kỷ niệm dễ thương";
+
       photo.onerror = () => {
-        photoWrap.hidden = true;
+        photoWraps[photoIndex].hidden = true;
         illustration.hidden = false;
-        illustration.innerHTML = '<div style="font-size:100px">📸💗</div><p style="color:#a83e70;font-weight:800">Thay ảnh tại assets/images/ nhé!</p>';
+        illustration.innerHTML =
+          '<div style="font-size:100px">📸💗</div>' +
+          '<p style="color:#a83e70;font-weight:800">' +
+          'Hãy kiểm tra ảnh trong assets/images/ nhé!' +
+          '</p>';
       };
     }
 
