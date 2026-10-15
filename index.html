@@ -1,10 +1,16 @@
 <!doctype html>
 <html lang="vi">
+
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#120b22"><meta name="description" content="Một món quà nhỏ, được làm bằng rất nhiều chân thành.">
-  <title>Gửi em, cô gái đặc biệt ♡</title><link rel="stylesheet" href="css/style.css"><script src="js/script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#120b22">
+  <meta name="description" content="Một món quà nhỏ, được làm bằng rất nhiều chân thành.">
+  <title>Gửi em, cô gái đặc biệt ♡</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
+
 <body class="locked">
   <section class="password-screen" id="passwordScreen" aria-labelledby="passwordTitle">
     <div class="password-card">
@@ -15,40 +21,87 @@
       <p class="password-copy">Anh có khóa lại một chút xíu.<br>Thử đoán mật mã của chúng mình nhé! 💌</p>
       <form id="passwordForm" class="password-form">
         <label class="password-label" for="passwordInput">Mật khẩu gồm 8 chữ số</label>
-        <input id="passwordInput" name="password" type="password" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" autocomplete="off" placeholder="· · · · · · · ·" aria-describedby="passwordHint passwordError" required>
-        <p class="password-hint" id="passwordHint">Gợi ý nhỏ: ngày đầu tiên chúng ta biết đến nhau — viết theo thứ tự ngày, tháng, năm nhé. ♡</p>
+        <input id="passwordInput" name="password" type="password" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"
+          autocomplete="off" placeholder="· · · · · · · ·" aria-describedby="passwordHint passwordError" required>
+        <p class="password-hint" id="passwordHint">Gợi ý nhỏ: ngày đầu tiên chúng ta biết đến nhau — viết theo thứ tự
+          ngày, tháng, năm nhé. ♡</p>
         <p class="password-error" id="passwordError" role="alert" aria-live="polite"></p>
         <button class="password-submit" type="submit">Mở món quà <span aria-hidden="true">♡</span></button>
       </form>
       <p class="password-chinese">缘分 · Duyên phận</p>
     </div>
   </section>
-  <div class="aurora aurora-one" aria-hidden="true"></div><div class="aurora aurora-two" aria-hidden="true"></div>
-  <div class="starfield" id="starfield" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
-  <div class="side-note side-note-left" aria-hidden="true">MỘT ĐIỀU NHỎ, CHỈ DÀNH CHO EM</div><div class="side-note side-note-right" aria-hidden="true">GỬI BẰNG CẢ TẤM LÒNG · 2026</div>
+  <div class="aurora aurora-one" aria-hidden="true"></div>
+  <div class="aurora aurora-two" aria-hidden="true"></div>
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+  <div class="petalfield" id="petalfield" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="touch-glow" id="touchGlow" aria-hidden="true"></div>
+  <div class="side-note side-note-left" aria-hidden="true">MỘT ĐIỀU NHỎ, CHỈ DÀNH CHO EM</div>
+  <div class="side-note side-note-right" aria-hidden="true">GỬI BẰNG CẢ TẤM LÒNG · 2026</div>
   <main class="app">
-    <header class="topbar"><a class="brand" href="#" aria-label="Gửi em" id="brand">Gửi cô gái anh thương <span>♡</span></a><button class="music-toggle" id="musicToggle" type="button" aria-pressed="false"><span class="music-disc" id="musicIcon">♫</span><span id="musicLabel">Bật nhạc</span></button></header>
+    <header class="topbar"><a class="brand" href="#" aria-label="Gửi em" id="brand">Gửi cô gái anh thương
+        <span>♡</span></a><button class="music-toggle" id="musicToggle" type="button" aria-pressed="false"><span
+          class="music-disc" id="musicIcon">♫</span><span id="musicLabel">Bật nhạc</span></button></header>
     <section class="intro-screen" id="introScreen" aria-labelledby="introTitle">
       <div class="intro-kicker"><span></span> MỘT BẤT NGỜ NHO NHỎ DÀNH CHO EM <span></span></div>
-      <div class="intro-orbit orbit-one" aria-hidden="true">♡</div><div class="intro-orbit orbit-two" aria-hidden="true">✧</div>
-      <div class="envelope-scene" id="envelopeScene" aria-hidden="true"><div class="envelope-shadow"></div><div class="envelope"><div class="env-back"></div><div class="env-letter"><span>Gửi em,</span><b>một điều anh muốn nói</b><i>♡</i></div><div class="env-front"></div><div class="env-flap"></div><div class="wax-seal">♥</div></div><span class="envelope-spark spark-left">✦</span><span class="envelope-spark spark-right">✧</span></div>
-      <p class="intro-overline">DÀNH RIÊNG CHO EM</p><h1 id="introTitle">Có một điều nhỏ<br><em>anh muốn em biết.</em></h1><p class="intro-copy">Không phải món quà gì to tát đâu.<br>Chỉ là vài điều anh đã muốn nói với em bằng cách đặc biệt hơn một chút.</p>
-      <button class="open-letter-button" id="openLetterButton"><span>Mở phong thư nhé</span><span class="button-heart">♡</span></button><div class="intro-footnote">慢慢来 · Cứ từ từ thôi, không cần vội</div>
+      <p class="touch-hint" aria-hidden="true">✧ Chạm nhẹ vào những vì sao ✧</p>
+      <div class="intro-orbit orbit-one" aria-hidden="true">♡</div>
+      <div class="intro-orbit orbit-two" aria-hidden="true">✧</div>
+      <div class="envelope-scene" id="envelopeScene" aria-hidden="true">
+        <div class="envelope-shadow"></div>
+        <div class="envelope">
+          <div class="env-back"></div>
+          <div class="env-letter"><span>Gửi em,</span><b>một điều anh muốn nói</b><i>♡</i></div>
+          <div class="env-front"></div>
+          <div class="env-flap"></div>
+          <div class="wax-seal">♥</div>
+        </div><span class="envelope-spark spark-left">✦</span><span class="envelope-spark spark-right">✧</span>
+      </div>
+      <p class="intro-overline">DÀNH RIÊNG CHO EM</p>
+      <h1 id="introTitle">Có một điều nhỏ<br><em>anh muốn em biết.</em></h1>
+      <p class="intro-copy">Không phải món quà gì to tát đâu.<br>Chỉ là vài điều anh đã muốn nói với em bằng cách đặc
+        biệt hơn một chút.</p>
+      <button class="open-letter-button" id="openLetterButton"><span>Mở phong thư nhé</span><span
+          class="button-heart">♡</span></button>
+      <div class="intro-footnote">慢慢来 · Cứ từ từ thôi, không cần vội</div>
     </section>
     <section class="story-card" id="storyCard" aria-live="polite" hidden>
-      <div class="story-topline"><span class="chapter-label" id="stepLabel">MỘT MÓN QUÀ NHỎ DÀNH RIÊNG CHO EM</span><span class="chapter-number" id="chapterNumber">01 / 06</span></div>
+      <div class="story-topline"><span class="chapter-label" id="stepLabel">MỘT MÓN QUÀ NHỎ DÀNH RIÊNG CHO
+          EM</span><span class="chapter-number" id="chapterNumber">01 / 06</span></div>
       <div class="memory-stage" id="memoryStage">
-        <div class="photo-wrap" id="photoWrap"><div class="photo-halo"></div><div class="photo-frame"><span class="tape tape-left"></span><img id="storyPhoto" src="assets/images/em-4.jpg" alt="Một khoảnh khắc của em"><span class="photo-caption" id="photoCaption">Một khoảnh khắc nhỏ ♡</span><span class="tape tape-right"></span></div><span class="photo-floating floating-heart">♡</span><span class="photo-floating floating-star">✧</span></div>
-        <div class="illustration" id="illustration" aria-hidden="true"><span class="illustration-heart">♡</span><span class="illustration-spark">✦</span></div>
+        <div class="photo-wrap" id="photoWrap">
+          <div class="photo-halo"></div>
+          <div class="photo-frame"><span class="tape tape-left"></span><img id="storyPhoto" src="assets/images/em-4.jpg"
+              alt="Một khoảnh khắc của em"><span class="photo-caption" id="photoCaption">Một khoảnh khắc nhỏ
+              ♡</span><span class="tape tape-right"></span></div><span
+            class="photo-floating floating-heart">♡</span><span class="photo-floating floating-star">✧</span>
+        </div>
+        <div class="illustration" id="illustration" aria-hidden="true"><span class="illustration-heart">♡</span><span
+            class="illustration-spark">✦</span></div>
       </div>
-      <div class="message"><p class="message-eyebrow" id="messageEyebrow">CHƯƠNG 01 · LỜI MỞ ĐẦU</p><h2 id="title">Ê cô gái ơiii! 👀</h2><p id="copy" class="type-copy">Anh có một thứ muốn cho em xem.</p></div>
+      <div class="message">
+        <p class="message-eyebrow" id="messageEyebrow">CHƯƠNG 01 · LỜI MỞ ĐẦU</p>
+        <h2 id="title">Ê cô gái ơiii! 👀</h2>
+        <p id="copy" class="type-copy">Anh có một thứ muốn cho em xem.</p>
+      </div>
       <div class="interaction" id="interaction" hidden></div>
-      <div class="story-actions"><button class="back-button" id="backButton" type="button" aria-label="Quay lại" hidden>←</button><button class="next-button" id="nextButton" type="button"><span id="nextLabel">Đi tiếp cùng anh</span><span class="next-arrow">↗</span></button></div>
-      <footer class="card-footer"><div class="progress-track" id="progressTrack" aria-label="Tiến trình"><span class="progress-dot active"></span><span class="progress-dot"></span><span class="progress-dot"></span><span class="progress-dot"></span><span class="progress-dot"></span><span class="progress-dot"></span></div><span id="progressText">01 — 06</span></footer>
+      <div class="story-actions"><button class="back-button" id="backButton" type="button" aria-label="Quay lại"
+          hidden>←</button><button class="next-button" id="nextButton" type="button"><span id="nextLabel">Đi tiếp cùng
+            anh</span><span class="next-arrow">↗</span></button></div>
+      <footer class="card-footer">
+        <div class="progress-track" id="progressTrack" aria-label="Tiến trình"><span
+            class="progress-dot active"></span><span class="progress-dot"></span><span class="progress-dot"></span><span
+            class="progress-dot"></span><span class="progress-dot"></span><span class="progress-dot"></span></div><span
+          id="progressText">01 — 06</span>
+      </footer>
       <div class="tiny-signature">Viết bằng dịu dàng, gửi bằng chân thành <span>♡</span></div>
+      <p class="swipe-hint" id="swipeHint" aria-hidden="true">← Vuốt để đọc tiếp →</p>
     </section>
     <p class="bottom-note" id="bottomNote" hidden>✧ Một chút ngốc nghếch, rất nhiều chân thành ✧</p>
     <audio id="backgroundMusic" src="assets/music/love.mp3" loop preload="none"></audio>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-</body></html>
+</body>
+
+</html>
