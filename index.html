@@ -5,7 +5,24 @@
   <meta name="theme-color" content="#120b22"><meta name="description" content="Một món quà nhỏ, được làm bằng rất nhiều chân thành.">
   <title>Gửi em, cô gái đặc biệt ♡</title><link rel="stylesheet" href="css/style.css"><script src="js/script.js" defer></script>
 </head>
-<body>
+<body class="locked">
+  <section class="password-screen" id="passwordScreen" aria-labelledby="passwordTitle">
+    <div class="password-card">
+      <div class="password-sparkle" aria-hidden="true">✦ ♡ ✧</div>
+      <div class="password-lock" aria-hidden="true">♡</div>
+      <p class="password-kicker">MỘT BÍ MẬT NHỎ DÀNH RIÊNG CHO EM</p>
+      <h1 id="passwordTitle">Trước khi mở món quà…</h1>
+      <p class="password-copy">Anh có khóa lại một chút xíu.<br>Thử đoán mật mã của chúng mình nhé! 💌</p>
+      <form id="passwordForm" class="password-form">
+        <label class="password-label" for="passwordInput">Mật khẩu gồm 8 chữ số</label>
+        <input id="passwordInput" name="password" type="password" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" autocomplete="off" placeholder="· · · · · · · ·" aria-describedby="passwordHint passwordError" required>
+        <p class="password-hint" id="passwordHint">Gợi ý nhỏ: ngày đầu tiên chúng ta biết đến nhau — viết theo thứ tự ngày, tháng, năm nhé. ♡</p>
+        <p class="password-error" id="passwordError" role="alert" aria-live="polite"></p>
+        <button class="password-submit" type="submit">Mở món quà <span aria-hidden="true">♡</span></button>
+      </form>
+      <p class="password-chinese">缘分 · Duyên phận</p>
+    </div>
+  </section>
   <div class="aurora aurora-one" aria-hidden="true"></div><div class="aurora aurora-two" aria-hidden="true"></div>
   <div class="starfield" id="starfield" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
   <div class="side-note side-note-left" aria-hidden="true">MỘT ĐIỀU NHỎ, CHỈ DÀNH CHO EM</div><div class="side-note side-note-right" aria-hidden="true">GỬI BẰNG CẢ TẤM LÒNG · 2026</div>

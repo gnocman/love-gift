@@ -1,5 +1,26 @@
 (() => {
   "use strict";
+  // Mật khẩu kỷ niệm: 01/09/2026 viết thành 8 chữ số.
+  const passwordScreen = document.getElementById("passwordScreen");
+  const passwordForm = document.getElementById("passwordForm");
+  const passwordInput = document.getElementById("passwordInput");
+  const passwordError = document.getElementById("passwordError");
+  passwordForm.addEventListener("submit", event => {
+    event.preventDefault();
+    if (passwordInput.value === "01092026") {
+      passwordError.textContent = "";
+      passwordScreen.classList.add("unlocking");
+      document.body.classList.remove("locked");
+      window.setTimeout(() => passwordScreen.remove(), 720);
+    } else {
+      passwordError.textContent = "Chưa đúng rồi em ơi, thử nhớ lại ngày đặc biệt ấy nhé. ♡";
+      passwordInput.value = "";
+      passwordInput.focus();
+      passwordForm.classList.remove("password-shake");
+      void passwordForm.offsetWidth;
+      passwordForm.classList.add("password-shake");
+    }
+  });
   const steps = [
     { label:"MỘT MÓN QUÀ NHỎ DÀNH RIÊNG CHO EM", eyebrow:"CHƯƠNG 01 · LỜI MỞ ĐẦU", title:"Ê cô gái ơiii! 👀", copy:"你好呀！(Nǐ hǎo ya — Chào em!)\n\nAnh có một món quà nho nhỏ muốn cho em xem. Nhưng mà phải hứa là đừng cười anh trước đã nha!", button:"Mở đầu câu chuyện", image:"assets/images/em-4.jpg", caption:"Một khoảnh khắc nhỏ ♡" },
     { label:"BÍ MẬT ĐƯỢC BẬT MÍ", eyebrow:"CHƯƠNG 02 · THỦ PHẠM XUẤT HIỆN", title:"Thủ phạm xuất hiện 🤭", copy:"Bí mật được bật mí đây: anh chính là người đã dành thời gian làm trang web hơi ngốc nghếch này chỉ để gửi cho em.\n\n给你的小惊喜 (Gěi nǐ de xiǎo jīngxǐ) — Một bất ngờ nho nhỏ dành cho em.\n\nKhông biết anh có được cộng điểm dễ thương nào không nhỉ?", button:"Để em chấm điểm", image:"assets/images/em-5.jpg", caption:"Người đứng sau món quà nho nhỏ này" },

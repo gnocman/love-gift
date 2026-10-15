@@ -4,3 +4,34 @@
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.65) rotate(0)}50%{opacity:.7;transform:scale(1.1) rotate(35deg)}}@keyframes auroraDrift{to{transform:translate(7vw,6vh) scale(1.13)}}@keyframes floatEnvelope{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(1deg)}}@keyframes shadowFloat{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(.88);opacity:.28}}@keyframes sparkle{0%,100%{opacity:.35;transform:scale(.75) rotate(0)}50%{opacity:1;transform:scale(1.18) rotate(25deg)}}@keyframes orbit{to{transform:rotate(360deg) translateX(12px) rotate(-360deg)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes introFade{to{opacity:0;transform:scale(1.035);filter:blur(7px)}}@keyframes photoReveal{0%{opacity:0;transform:translateY(24px) rotate(-7deg) scale(.92);filter:blur(6px)}100%{opacity:1;transform:translateY(0) rotate(-2deg) scale(1);filter:blur(0)}}@keyframes stepEnter{from{opacity:.4;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes cardArrive{from{opacity:0;transform:translateY(24px) scale(.97);filter:blur(5px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}@keyframes cursorBlink{50%{opacity:0}}@keyframes heartBurst{0%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(0)}12%{opacity:1}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.2) rotate(var(--rot))}}@keyframes fireworkBurst{0%{opacity:0;transform:translate(-50%,-50%) scale(.25)}10%{opacity:1}75%{opacity:.9}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.65) rotate(var(--rot))}}@keyframes softAppear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:600px){.app{width:min(100% - 22px,850px);padding:13px 0 20px}.topbar{margin-bottom:12px}.brand{font-size:18px}.music-toggle{padding:7px 10px}.side-note{display:none}.intro-screen{min-height:calc(100svh - 90px);padding:25px 16px;border-radius:23px}.intro-screen:before,.story-card:before{inset:7px;border-radius:17px}.envelope-scene{margin:28px 0 12px;transform:scale(.88)}.intro-screen h1{font-size:clamp(32px,9vw,44px)}.intro-copy{font-size:12px}.intro-orbit{font-size:20px}.orbit-one{left:7%;top:27%}.orbit-two{right:7%;top:34%}.story-card{padding:23px 17px;border-radius:23px}.story-topline{font-size:8px;letter-spacing:.12em}.memory-stage{min-height:275px;margin-top:8px}.photo-wrap{width:min(80%,285px)}.photo-frame{padding:9px 9px 42px}.photo-frame img{height:235px}.photo-caption{font-size:12px;bottom:11px}.floating-heart{right:-22px;font-size:32px}.floating-star{left:-19px;font-size:25px}.message h2{font-size:31px}.message>p:last-child{font-size:13px;line-height:1.85}.story-actions{margin:23px 0}.next-button{min-width:0;flex:1;max-width:260px;gap:20px}.choice-button{width:100%}.interaction{gap:8px}.tiny-signature{margin-top:17px}.card-footer{margin-top:4px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* Màn hình mật khẩu mở đầu */
+body.locked{overflow:hidden}
+body.locked .app,body.locked .side-note{visibility:hidden}
+.password-screen{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at 50% 20%,rgba(107,48,104,.55),transparent 52%),rgba(13,7,24,.94);backdrop-filter:blur(14px)}
+.password-card{position:relative;width:min(100%,470px);padding:clamp(28px,6vw,48px) clamp(22px,5vw,42px);text-align:center;border:1px solid rgba(255,224,242,.2);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:0 28px 100px rgba(0,0,0,.4),inset 0 1px rgba(255,255,255,.07);overflow:hidden}
+.password-card:before{content:"";position:absolute;inset:9px;border:1px solid rgba(233,201,140,.18);border-radius:20px;pointer-events:none}
+.password-sparkle{color:var(--gold);letter-spacing:.7em;font-size:18px;margin-bottom:20px;animation:twinkle 3s ease-in-out infinite}
+.password-lock{width:70px;height:70px;margin:0 auto 22px;display:grid;place-items:center;border:1px solid rgba(245,166,200,.45);border-radius:50%;color:var(--pink);font-size:35px;box-shadow:0 0 34px rgba(245,166,200,.14);animation:floatEnvelope 4s ease-in-out infinite}
+.password-kicker{font-size:9px;letter-spacing:.22em;color:var(--gold);font-weight:700;margin:0 0 15px}
+.password-card h1{font-family:'Playfair Display',serif;font-size:clamp(27px,6vw,37px);font-weight:500;line-height:1.2;margin:0 0 14px}
+.password-copy{color:var(--muted);font-size:14px;line-height:1.85;margin:0 0 27px}
+.password-form{display:flex;flex-direction:column;align-items:stretch;gap:12px;text-align:left}
+.password-label{font-size:12px;color:#f6dce9;text-align:center}
+.password-form input{width:100%;height:56px;border-radius:14px;border:1px solid rgba(245,166,200,.38);outline:none;background:rgba(10,5,19,.5);color:#fff;text-align:center;font-size:25px;letter-spacing:.34em;padding:0 14px;transition:border-color .2s,box-shadow .2s}
+.password-form input:focus{border-color:var(--pink);box-shadow:0 0 0 4px rgba(245,166,200,.1)}
+.password-form input::placeholder{color:rgba(255,230,243,.35);letter-spacing:.28em}
+.password-hint{font-size:12px;line-height:1.75;color:#cdbbd4;text-align:center;margin:2px 0 0}
+.password-error{min-height:17px;margin:0;color:#ffb7cf;text-align:center;font-size:12px}
+.password-submit{display:flex;align-items:center;justify-content:center;gap:12px;min-height:51px;border:1px solid rgba(255,220,237,.45);border-radius:999px;background:linear-gradient(110deg,#d77ba8,#a9588e);color:#fff;font-weight:700;cursor:pointer;box-shadow:0 9px 28px rgba(184,78,137,.22);transition:transform .2s,filter .2s}
+.password-submit:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.password-submit span{font-size:20px}
+.password-chinese{font-family:'Playfair Display',serif;color:rgba(233,201,140,.8);font-size:14px;letter-spacing:.18em;margin:23px 0 0}
+.password-screen.unlocking{animation:passwordFade .75s ease forwards}
+@keyframes passwordFade{to{opacity:0;visibility:hidden;transform:scale(1.025)}}
+@media(max-width:520px){.password-card{border-radius:24px}.password-copy{font-size:13px}.password-hint{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.password-lock,.password-sparkle{animation:none}.password-submit{transition:none}}
+
+.password-shake{animation:passwordShake .32s ease}
+@keyframes passwordShake{25%,75%{transform:translateX(-4px)}50%{transform:translateX(4px)}}
